@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://com/kchaou/webservices/accountservice" xmlns:account="http://webservices.kchaou.com" targetNamespace="http://com/kchaou/webservices/accountservice" elementFormDefault="qualified">
+	<xsd:import namespace="http://webservices.kchaou.com" schemaLocation="AccountDetails.xsd"/>
+	<xsd:element name="AccountDetailsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="accountNumber" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="AccountDetailsResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AccountDetails" type="account:Account"/>
+				<xsd:element name="faultcode" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>Code d'erreur </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				<xsd:element name="faultmessage" type="xsd:string" minOccurs="0">
+					<xsd:annotation>
+						<xsd:documentation>message d'erreur </xsd:documentation>
+					</xsd:annotation>
+				</xsd:element>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
