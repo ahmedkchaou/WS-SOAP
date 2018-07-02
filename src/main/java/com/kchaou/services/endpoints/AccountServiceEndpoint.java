@@ -63,6 +63,7 @@ public class AccountServiceEndpoint
 		}
 		else {
 			response.setFaultmessage("Error");
+			logger.info("Exception ");
 		}
 		
 	
